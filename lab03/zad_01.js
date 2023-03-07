@@ -28,18 +28,18 @@ function isEquals(val1, val2) {
 // isEquals(null, undefined); //A D
 // isEquals(undefined, NaN); //B D 
 // isEquals(['a', 'b', 'c'], ['b', 'c', 'd']); //B D
-// isEquals(0, '');
-// isEquals('0', '');
-// isEquals(+0, -0);
-// isEquals(0, false);
-// isEquals(0, 'false');
-// isEquals([1, 2], '1,2');
+// isEquals(0, ''); //A D
+// isEquals('0', ''); //B D
+// isEquals(+0, -0); //A C
+// isEquals(0, false); //A D 
+// isEquals(0, 'false'); //B D
+// isEquals([1, 2], '1,2'); //A D
 
 // Co zwróci kazde z ponizszych wyrazen?
-!!false;
-!!true;
-!!undefined;
-!!null;
+!!false; //false
+!!true; //true
+!!undefined; //false
+!!null; //false
 
 // ========================= Zadanie 2 =========================
 // Jaki będzie efekt działania poniższego fragmentu kodu?
@@ -52,7 +52,7 @@ const person = {
 
 // console.log(person);
 // person = {};
-// console.log(person);
+// console.log(person); // wyrzuca błąd, bo nie można zmieniać wartości const
 
 // ========================= Zadanie 3 =========================
 // Co zostanie wyświetlone na ekranie?
@@ -65,6 +65,12 @@ const person = {
 // }
 // console.log(number);
 
+/*
+Wyświetli
+3
+4
+3
+*/
 // ========================= Zadanie 4 =========================
 // Czym się różnią poniższe dwa fragmenty kodu?
 // Jak działa operator '...'?
@@ -76,27 +82,49 @@ const person = {
 // console.log(newArr2);
 
 // Co zostanie wyświetlone na ekranie?
+/*
+[ [ 1, 2 ], 3, 4 ]
+[ 1, 2, 3, 4 ]
+*/
 // Wyjaśnij wynik
-
+/* 
+w newArr1 za arr jest przypisane [1,2]
+w newArr2 za arr jest przypisane [1,2], lecz następuje spłaszczenie tej tablicy stąd wynik [1,2,3,4]
+*/
 // const word = 'javascript';
 // const arrWord = [...word];
 // console.log(arrWord);
-
+/*
+[
+    'j', 'a', 'v', 'a',
+    's', 'c', 'r', 'i',
+    'p', 't'
+]
+*/
 // ========================= Zadanie 5 =========================
 // Zapoznaj się z kodem poniżej. Jaki będzie jego wynik i dlaczego?
 
 // var hello = 'Hello world!';
 // var result = hello / 2;
 
-// console.log(result);
+// console.log(result); //NaN, nie można podzielić stringa przez liczbę
 
-// console.log(Number.isNaN(result));
-// console.log(Number.isNaN(hello));
+// console.log(Number.isNaN(result)); // true
+// console.log(Number.isNaN(hello)); // false
 
 // ========================= Zadanie 6 =========================
 // Zapoznaj się z przykładami poniżej. Jaka jest różnica między var a let/const?
 
-// var car = 'BMW';
+/*
+var: Zmienne deklarowane za pomocą var mają tzw. zasięg funkcyjny. Oznacza to, że są one widoczne w całej funkcji,
+w której zostały zadeklarowane. Poza funkcją, zmienna zadeklarowana za pomocą var staje się globalna
+i jest widoczna dla całego programu. Zmienne te mogą być ponownie deklarowane i ich wartości mogą być modyfikowane.
+
+let: Zmienne deklarowane za pomocą let mają zasięg blokowy, co oznacza, że są widoczne tylko w bloku,
+w którym zostały zadeklarowane (np. wewnątrz pętli, warunków). Zmienne te nie mogą być ponownie deklarowane
+w tym samym bloku i ich wartości mogą być modyfikowane.
+*/
+//  var car = 'BMW';
 
 // function showCar() {
 //     car = 'Audi';
@@ -127,12 +155,12 @@ const person = {
 // if (true) {
 //     var a = 2;
 // }
-// console.log(a);
+// console.log(a); //wszystko dobrze!
 
 // if (true) {
 //     const b = 2;
 // }
-// console.log(b);
+// console.log(b); //błąd: b is not defined
 
 // -------
 
@@ -148,14 +176,16 @@ const person = {
 //     console.log(i);
 // }
 // console.log(i);
-
+// rezultat: 0...10 0...10
 // -------
 
 // var test = "var1";
-// var test = "var2";
+// var test = "var2"; //wszystko dobrze!
 
 // let test2 = "let1";
-// let test2 = "let2";
+// let test2 = "let2"; //krzyczy błąd
 
 // ========================= Zadanie 7 =========================
 // Do czego używany jest 'use strict' w pierwszej linijce skryptu?
+
+//Tryb ścisły, który pozwala uniknąć błędów programistycznych takich jak np. używanie niezadeklarowanych zmiennych.
