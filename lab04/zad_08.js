@@ -1,16 +1,18 @@
 'use strict';
 
 function getCounter(min,max) {
-    return function pomocnicza() {
+    return function () {
         if (min > max) {
             console.log(undefined);
         }
         else {
-            console.log(min);
-            min = min+1
+            console.log(min)
         }
+        min++;
     }
 }
-getCounter(5,7)();
-getCounter(5,7)();
-getCounter(5,7)();
+const counter = getCounter(5,7);
+counter();
+counter();
+counter();
+counter();
