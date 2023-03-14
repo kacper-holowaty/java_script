@@ -18,9 +18,3 @@ console.log(toArray(1, 2));
 console.log(toArray(1, "tekst"));
 console.log(toArray("aa", [1, 2]));
 console.log(toArray([1], null));
-
-//inny sposób w domu zrobie
-
-// function toArrayShort(a,b) {
-    
-// }
