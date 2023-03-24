@@ -25,23 +25,6 @@ const naKilogramy = lista.reduce((akum,elem) => {
 console.log(naKilogramy);
 
 //c
-// const zakupyString = lista.reduce((akum,elem) => {
-//     if (akum[elem.typ] === undefined){
-//         akum[elem.typ] = []
-//     }
-//     akum[elem.typ].push(elem.produkt)
-//     return akum;
-// },[])//to musi być w postaci tablicy obiektów żeby zadziałało
-// console.log(zakupyString);
-// const wynik = zakupyString.reduce((acc,item) => {
-//     const key = Object.keys(item)[0];
-//     const value = item[key].reduce((prev,curr,index) => {
-//         return `${prev}${index+1}. ${curr}\n`
-//     },'')
-//     return `${acc}${key}: \n${value}\n`
-// },'')
-// console.log(wynik);
-
 const zakupyString = lista.reduce((akum,elem) => {
     if (akum[elem.typ] === undefined) {
         akum[elem.typ] = [];   
