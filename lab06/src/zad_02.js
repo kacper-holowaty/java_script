@@ -5,7 +5,6 @@ const result = ships.reduce((akum, elem) => {
         if (akum[elem.manufacturer] === undefined) {
             akum[elem.manufacturer] = [];
         }
-        // const {height, maximumSpeed} = elem;
         (akum[elem.manufacturer]).push({[elem.model]: {"height": elem.height, "maximumSpeed": elem.maximumSpeed}});
     }
     return akum;
