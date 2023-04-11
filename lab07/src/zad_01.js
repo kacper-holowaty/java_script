@@ -70,6 +70,10 @@ const res10 = _.reduce(lp3, (akum, elem) => {
 },[])
 // console.log(res10);
 
+//albo
+const res10Alternative = _.chain(lp3).groupBy(x => x.author).mapValues(x => x.map(elem => _.omit(elem, ['author', 'change']))).value();
+// console.log(res10Alternative);
+
 //11
 const res11 = _.countBy(lp3, (x) => x.author);
 // console.log(res11);
