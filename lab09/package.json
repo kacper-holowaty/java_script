@@ -1,0 +1,17 @@
+{
+  "name": "lab09",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "zad1": "nodemon src/zad_01.js",
+    "zad2": "nodemon src/zad_02.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
