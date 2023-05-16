@@ -1,0 +1,21 @@
+{
+  "name": "lab11",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "zad1": "nodemon src/zad_01.js",
+    "zad2": "nodemon src/zad_02.js",
+    "zad3": "nodemon src/zad_03.js",
+    "zad4": "nodemon src/zad_04.js",
+    "zad5": "nodemon src/zad_05.js",
+    "zad6": "nodemon src/zad_06.js",
+    "zad7": "nodemon src/zad_07.js",
+    "zad8": "nodemon src/zad_08.js",
+    "zad9": "nodemon src/zad_09.js",
+    "zad10": "nodemon src/zad_10.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
