@@ -1,11 +1,14 @@
-function multiplyAsync(x,y) {
-    return new Promise((resolve, reject) => {
-        if (typeof x === "number" && typeof y === "number") {
-            resolve(x * y)
-        }
-        else {
-            reject("Oba argumenty muszą być liczbami!")
-        }
-    }).then(res => console.log(res)).catch((err) => console.log(err))
+function counter(maks,milisekundy) {
+    return function() {
+        let i = 1
+        const interval = setInterval(() => {
+            console.log("Liczba: "+i);
+            return i++
+        }, milisekundy);
+        setTimeout(() => {
+            clearInterval(interval)
+        }, (maks+1)*milisekundy);
+    }
 }
-multiplyAsync(1,19)
+counter(5,2000)()
+
