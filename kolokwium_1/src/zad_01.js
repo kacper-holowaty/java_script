@@ -15,9 +15,7 @@ const questionsChatGpt = require('./questions-chat-gpt.js').questionsChatGpt;
     },{})
     // console.log(res);
     // const pom = 
-    const klucze = Object.keys(res)/*.reduce((akum,elem) => {
-        return [...akum,elem.toLowerCase()]
-    },[])*/
+    const klucze = Object.keys(res)
     // console.log(klucze);
     const pom = klucze.reduce((acc,item) => {
         const reszta = res[item]
@@ -31,13 +29,13 @@ const questionsChatGpt = require('./questions-chat-gpt.js').questionsChatGpt;
     console.log(pom);
     // const helper = klucze.reduce((akum,elem) => {
     //     const rest = pom[elem]
-    //     console.log(rest);
-    //     const b = rest.reduce((a, el) => {
-    //         el.count = el.question.length
-    //         return {...a,count: el.count,questions: el.questions}
-    //     },{})
-    //     akum[elem] = b
-    //     return akum
+    //     // console.log(rest);
+    //     // const b = rest.reduce((a, el) => {
+    //     //     el.count = el.question.length
+    //     //     return {...a,count: el.count,questions: el.questions}
+    //     // },{})
+    //     // akum[elem] = b
+    //     // return akum
     // },{}) //tu coś nie działa
     // console.log(helper);
 })(questionsChatGpt)
