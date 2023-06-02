@@ -77,3 +77,30 @@ const poKolei = (fun1, fun2, fun3, cb) => {
     })
 };
 poKolei(func1,func2,func3,cback)
+
+//albo krótsza wersja, używając finally
+
+// const poKolei = (fun1, fun2, fun3, cb) => {
+//     let result = 3;
+//     fun1(result).then((res) => {
+//         result = res;
+//     }).catch((res) => {
+//         result = res;
+//     }).finally(() => {
+//         fun2(result).then((res) => {
+//             result = res;
+//         }).catch((res) => {
+//             result = res;
+//         }).finally(() => {
+//             fun3(result).then((res) => {
+//                 result = res;
+//             }).catch((res) => {
+//                 result = res;
+//             }).finally(() => {
+//                 cb(result)
+//             })
+//         })
+//     })
+// }
+
+// poKolei(func1,func2,func3,cback)

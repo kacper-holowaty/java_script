@@ -12,24 +12,24 @@ const func2 = (arg,cb) => {
         cb(arg)
     }, 2000);
 }
-const cb = (arr) => console.log(arr); 
+const cb = (arr) => console.log("Rezultat: "+arr); 
 
 const razem = (fun1, fun2, cb) => {
-    //let arr = [null,null] i wstawiać na indexsy arr[0] = x w fun1 i fun2 // w zad 5 forEach
-    let x = 3
-    let arr = [];
+    let x = 3;
+    let arr = [null,null];
     fun1(x,x => {
-        arr.push(x)
+        arr[0] = x
         console.log(arr);
+        if (arr[0] && arr[1]) {
+            cb(`[${arr[0]}, ${arr[1]}]`)
+        }
     })
     fun2(x,x => {
-        arr.push(x)
+        arr[1] = x
         console.log(arr);
+        if (arr[0] && arr[1]) {
+            cb(`[${arr[0]}, ${arr[1]}]`)
+        }
     })
-    // cb(arr);
-    // if (arr.length == 2) {
-    //     cb(arr)
-    //     // console.log(arr);
-    // }
 };
 razem(func1,func2,cb)
